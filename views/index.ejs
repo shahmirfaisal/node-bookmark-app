@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./includes/nav.ejs') %>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="heading">SiteMarker</h1>
+
+      <form action="/bookmark" method="POST" class="form">
+        <h2 class="form__heading">
+          Bookmark your favourite sites.
+        </h2>
+        <div class="form__control">
+          <label for="name" class="form__label">Enter Name</label>
+          <input
+            type="text"
+            class="form__input"
+            placeholder="Name..."
+            name="name"
+            id="name"
+          />
+        </div>
+        <div class="form__control">
+          <label for="url" class="form__label">Enter URL</label>
+          <input
+            type="text"
+            class="form__input"
+            placeholder="URL..."
+            name="url"
+            id="url"
+          />
+        </div>
+
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+
+        <button class="btn">Bookmark <i class="far fa-bookmark"></i></button>
+      </form>
+
+      <h2 class="sub-heading">Your sites</h2>
+
+      <ul class="sites">
+        <li class="sites__site">
+          <p class="sites__name">Facebook</p>
+          <a href="#" class="sites__visit">
+            <i class="fas fa-eye"></i>
+          </a>
+          <form action="/delete-site" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+
+            <button class="sites__delete">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </form>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

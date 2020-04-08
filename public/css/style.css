@@ -1,0 +1,111 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif;
+}
+button {
+  cursor: pointer;
+}
+
+.main {
+  width: 50rem;
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+.heading {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.form {
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 3rem 3rem 4rem 3rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.form__heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.form__control {
+  margin-bottom: 2rem;
+}
+.form__label {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.form__input {
+  display: block;
+  width: 100%;
+  font-size: 1.7rem;
+  padding: 0.8rem 2rem;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  background: linear-gradient(
+    90deg,
+    rgba(78, 70, 219, 1) 0%,
+    rgba(144, 87, 228, 1) 13%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+  border: none;
+  padding: 0.6rem 2rem;
+  font-size: 1.6rem;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.btn > i {
+  margin-left: 0.5rem;
+}
+
+.sub-heading {
+  margin: 3rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sites {
+  list-style-type: none;
+}
+.sites__site {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+}
+.sites__name {
+  margin-right: auto;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.sites__visit {
+  color: dodgerblue;
+  margin-right: 1.7rem;
+}
+.sites__delete {
+  border: none;
+  background-color: transparent;
+  color: red;
+}
+.sites i {
+  font-size: 2rem;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./includes/nav.ejs') %>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="heading">Bookmark Your Favourite Sites</h1>
+
+      <form action="/login" method="POST" class="form">
+        <h2 class="form__heading">Login</h2>
+
+        <div class="form__control">
+          <input
+            type="email"
+            placeholder="Email..."
+            class="form__input"
+            name="email"
+          />
+        </div>
+
+        <div class="form__control">
+          <input
+            type="password"
+            placeholder="Password..."
+            class="form__input"
+            name="password"
+          />
+        </div>
+
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+
+        <button class="btn">Login</button>
+      </form>
+    </main>
+  </body>
+</html>
