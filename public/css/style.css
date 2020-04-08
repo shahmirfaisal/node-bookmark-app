@@ -74,6 +74,11 @@ button {
 .btn > i {
   margin-left: 0.5rem;
 }
+.btn--signout {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
 
 .sub-heading {
   margin: 3rem;

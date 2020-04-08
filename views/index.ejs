@@ -5,6 +5,11 @@
   </head>
   <body>
     <main class="main">
+      <form action="/signout" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <button class="btn btn--signout">SignOut</button>
+      </form>
+
       <h1 class="heading">SiteMarker</h1>
 
       <form action="/bookmark" method="POST" class="form">

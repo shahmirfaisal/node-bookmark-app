@@ -1,20 +1,20 @@
 const User = require("../models/user");
 const { validationResult } = require("express-validator/check");
 
-exports.getSignup = (req, res, next) => {
+exports.getSignup = (req, res) => {
   res.render("./signup", {
     pageTitle: "Signup",
   });
 };
 
-exports.getLogin = (req, res, next) => {
+exports.getLogin = (req, res) => {
   res.render("./login", {
     pageTitle: "Login",
   });
 };
 
-exports.postSignup = (req, res, next) => {
-  const { name, email, password, confirmPassword } = req.body;
+exports.postSignup = (req, res) => {
+  const { name, email, password } = req.body;
 
   const error = validationResult(req);
   if (!error.isEmpty()) {
@@ -25,11 +25,11 @@ exports.postSignup = (req, res, next) => {
     console.log(result.ops[0]);
     req.session.isLogin = true;
     req.session.user = result.ops[0];
-    req.session.save((err) => res.redirect("/"));
+    req.session.save(() => res.redirect("/"));
   });
 };
 
-exports.postLogin = (req, res, next) => {
+exports.postLogin = (req, res) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty())
@@ -38,6 +38,12 @@ exports.postLogin = (req, res, next) => {
   User.find(req.body.email).then((user) => {
     req.session.isLogin = true;
     req.session.user = user;
-    req.session.save((err) => res.redirect("/"));
+    req.session.save(() => res.redirect("/"));
   });
+};
+
+exports.postSignout = (req, res) => {
+  req.session.isLogin = false;
+  req.session.user = null;
+  req.session.save(() => res.redirect("/login"));
 };
