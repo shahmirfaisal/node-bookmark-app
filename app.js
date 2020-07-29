@@ -14,7 +14,7 @@ app.set("views", "./views");
 
 const store = new MongoSession({
   uri:
-    "mongodb+srv://shahmir:programmingchola@cluster0-3jbwc.mongodb.net/bookmark?retryWrites=true&w=majority",
+    "mongodb+srv://username:password@cluster0-3jbwc.mongodb.net/bookmark?retryWrites=true&w=majority",
   collection: "sessions",
 });
 
